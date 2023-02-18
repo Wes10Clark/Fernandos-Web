@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import "./App.css";
+import Heading from "./components/Heading";
+import Madison from "./pages/Madison";
+import Pearl from "./pages/Pearl";
+import Reservoir from "./pages/Reservoir";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Heading />
+      <Routes>
+        <Route path="/" element={<Madison />} />
+        <Route path="/Pearl" element={<Pearl />} />
+        <Route path="/Reservoir" element={<Reservoir />} />
+      </Routes>
     </div>
   );
 }
